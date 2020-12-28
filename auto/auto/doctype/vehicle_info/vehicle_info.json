@@ -1,0 +1,130 @@
+{
+ "autoname": "field:vin",
+ "creation": "2020-12-26 02:03:00.759962",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "vin",
+  "model_year",
+  "make",
+  "model",
+  "mileage",
+  "engine",
+  "tire_size",
+  "color",
+  "license_plate",
+  "engine_cylinders",
+  "engine_displacement",
+  "engine_model",
+  "engine_power",
+  "title"
+ ],
+ "fields": [
+  {
+   "fieldname": "vin",
+   "fieldtype": "Data",
+   "label": "vin",
+   "unique": 1
+  },
+  {
+   "fieldname": "model_year",
+   "fieldtype": "Int",
+   "label": "Model Year",
+   "options": "Model Year"
+  },
+  {
+   "fieldname": "make",
+   "fieldtype": "Data",
+   "label": "Make",
+   "options": "Make"
+  },
+  {
+   "fieldname": "model",
+   "fieldtype": "Data",
+   "label": "Model",
+   "options": "Model"
+  },
+  {
+   "fieldname": "engine",
+   "fieldtype": "Data",
+   "label": "Engine",
+   "options": "Engine"
+  },
+  {
+   "fieldname": "tire_size",
+   "fieldtype": "Data",
+   "label": "Tire Size",
+   "options": "Tire Size"
+  },
+  {
+   "fieldname": "color",
+   "fieldtype": "Data",
+   "label": "Color",
+   "options": "Color"
+  },
+  {
+   "fieldname": "license_plate",
+   "fieldtype": "Data",
+   "label": "License Plate",
+   "options": "License Plate"
+  },
+  {
+   "fieldname": "engine_cylinders",
+   "fieldtype": "Data",
+   "label": "Engine Cylinders"
+  },
+  {
+   "fieldname": "engine_displacement",
+   "fieldtype": "Data",
+   "label": "Engine Displacement (ccm)",
+   "options": "Displacement (CC)"
+  },
+  {
+   "fieldname": "engine_model",
+   "fieldtype": "Data",
+   "label": "Engine Model"
+  },
+  {
+   "fieldname": "engine_power",
+   "fieldtype": "Data",
+   "label": "Engine Power (kW)"
+  },
+  {
+   "fieldname": "mileage",
+   "fieldtype": "Int",
+   "label": "Mileage"
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Title"
+  }
+ ],
+ "modified": "2020-12-28 00:52:12.243283",
+ "modified_by": "Administrator",
+ "module": "Auto",
+ "name": "Vehicle Info",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "search_fields": "make, model, license_plate",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "title",
+ "track_changes": 1
+}
