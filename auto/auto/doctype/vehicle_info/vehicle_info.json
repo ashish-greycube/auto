@@ -6,18 +6,23 @@
  "engine": "InnoDB",
  "field_order": [
   "vin",
+  "customer",
+  "vin_fields_section",
   "model_year",
   "make",
   "model",
-  "mileage",
-  "engine",
-  "tire_size",
-  "color",
-  "license_plate",
-  "engine_cylinders",
-  "engine_displacement",
+  "transmission_style",
+  "column_break_9",
+  "drive_type",
+  "trim",
   "engine_model",
-  "engine_power",
+  "engine_displacement",
+  "auto_fields_section",
+  "mileage",
+  "tyre_size",
+  "column_break_17",
+  "licence_plate",
+  "color",
   "title"
  ],
  "fields": [
@@ -46,33 +51,10 @@
    "options": "Model"
   },
   {
-   "fieldname": "engine",
-   "fieldtype": "Data",
-   "label": "Engine",
-   "options": "Engine"
-  },
-  {
-   "fieldname": "tire_size",
-   "fieldtype": "Data",
-   "label": "Tire Size",
-   "options": "Tire Size"
-  },
-  {
    "fieldname": "color",
    "fieldtype": "Data",
    "label": "Color",
    "options": "Color"
-  },
-  {
-   "fieldname": "license_plate",
-   "fieldtype": "Data",
-   "label": "License Plate",
-   "options": "License Plate"
-  },
-  {
-   "fieldname": "engine_cylinders",
-   "fieldtype": "Data",
-   "label": "Engine Cylinders"
   },
   {
    "fieldname": "engine_displacement",
@@ -83,26 +65,74 @@
   {
    "fieldname": "engine_model",
    "fieldtype": "Data",
-   "label": "Engine Model"
-  },
-  {
-   "fieldname": "engine_power",
-   "fieldtype": "Data",
-   "label": "Engine Power (kW)"
+   "label": "Engine Model",
+   "options": "Engine Model"
   },
   {
    "fieldname": "mileage",
    "fieldtype": "Int",
-   "label": "Mileage"
+   "label": "Mileage (KM)"
   },
   {
    "fieldname": "title",
    "fieldtype": "Data",
    "hidden": 1,
    "label": "Title"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "trim",
+   "fieldtype": "Data",
+   "label": "Trim",
+   "options": "Trim"
+  },
+  {
+   "fieldname": "transmission_style",
+   "fieldtype": "Data",
+   "label": "Transmission Style",
+   "options": "Transmission Style"
+  },
+  {
+   "fieldname": "drive_type",
+   "fieldtype": "Data",
+   "label": "Drive Type",
+   "options": "Drive Type"
+  },
+  {
+   "fieldname": "vin_fields_section",
+   "fieldtype": "Section Break",
+   "label": "VIN Fields"
+  },
+  {
+   "fieldname": "auto_fields_section",
+   "fieldtype": "Section Break",
+   "label": "Auto Fields"
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_17",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tyre_size",
+   "fieldtype": "Data",
+   "label": "Tyre Size"
+  },
+  {
+   "fieldname": "licence_plate",
+   "fieldtype": "Data",
+   "label": "Licence Plate"
   }
  ],
- "modified": "2020-12-28 00:52:12.243283",
+ "modified": "2020-12-30 19:24:39.554606",
  "modified_by": "Administrator",
  "module": "Auto",
  "name": "Vehicle Info",
@@ -122,9 +152,9 @@
   }
  ],
  "quick_entry": 1,
- "search_fields": "make, model, license_plate",
+ "search_fields": "make, model, licence_plate",
  "sort_field": "modified",
  "sort_order": "DESC",
- "title_field": "title",
+ "title_field": "vin",
  "track_changes": 1
 }

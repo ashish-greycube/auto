@@ -13,7 +13,8 @@ from frappe.utils import cstr, cint
 
 class VehicleInfo(Document):
     def validate(self):
-        self.set_values(self.vin, False)
+        if self.is_new():
+            self.set_values(self.vin, False)
         self.title = " ".join([cstr(x) for x in [self.make, self.model, self.model_year] if x])
 
     def set_values(self, vin, overwrite=False):
@@ -52,6 +53,32 @@ def get_vin_info(vin):
         frappe.msgprint("VIN details response has some errors. %s" % frappe.bold(out.get("Error Text")))
 
     return out
+
+
+def update_vehicle_info(doc, method):
+    fields_to_update = ["customer"] + [
+            "color_cf",
+            "drive_type_cf",
+            "engine_displacement_cf",
+            "engine_model_cf",
+            "licence_plate_cf",
+            "make_cf",
+            "mileage_cf",
+            "model_cf",
+            "model_year_cf",
+            "transmission_style_cf",
+            "trim_cf",
+            "tyre_size_cf", ]
+
+    if doc.get("customer_vehicle_cf"):
+        args = dict()
+        for d in fields_to_update:
+            if doc.get(d):
+                args.setdefault(d.replace("_cf", ""), doc.get(d))
+        if args:
+            v_info = frappe.get_doc("Vehicle Info", doc.get("customer_vehicle_cf"))
+            v_info.update(args)
+            v_info.save()
 
 
 vpic_sample_response = """
@@ -194,23 +221,3 @@ vpic_sample_response = """
   "Other Motorcycle Info": None
 }
 """
-
-
-# def get_vin_info(vin):
-    # def _get_mapped_info(response):
-    #     out = dict()
-    #     for attr in response.get("decode", []):
-    #         out.setdefault(attr["label"], attr["value"])
-    #     return out
-    # data = json.loads(sample_response)
-    # return _get_mapped_info(data)
-# sample_decode_response = """
-#     {
-#         "decode": [
-#             {
-#                 "label": "Make",
-#                 "value": "Audi"
-#             },
-#         ]
-#     }
-#     """

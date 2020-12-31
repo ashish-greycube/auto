@@ -87,6 +87,14 @@ doctype_js = {"Customer": "public/js/customer.js"}
 #	}
 # }
 
+doc_events = {
+    "Quotation": {
+        "validate": "auto.auto.doctype.vehicle_info.vehicle_info.update_vehicle_info"
+    },
+    "Sales Order": {"validate": "auto.auto.doctype.vehicle_info.vehicle_info.update_vehicle_info"},
+    "Sales Invoice": {"validate": "auto.auto.doctype.vehicle_info.vehicle_info.update_vehicle_info"},
+}
+
 # Scheduled Tasks
 # ---------------
 
