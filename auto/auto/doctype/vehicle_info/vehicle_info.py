@@ -27,6 +27,7 @@ class VehicleInfo(Document):
 
     def refresh_vin_info(self):
         self.set_values(self.vin, True)
+        self.save()
 
 
 def get_vin_info(vin):
