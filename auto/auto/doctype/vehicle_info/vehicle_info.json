@@ -1,4 +1,5 @@
 {
+ "allow_import": 1,
  "autoname": "field:vin",
  "creation": "2020-12-26 02:03:00.759962",
  "doctype": "DocType",
@@ -141,7 +142,7 @@
    "label": "Licence Plate"
   }
  ],
- "modified": "2021-01-06 22:40:46.364802",
+ "modified": "2021-01-07 08:49:05.982842",
  "modified_by": "Administrator",
  "module": "Auto",
  "name": "Vehicle Info",
@@ -173,7 +174,6 @@
   },
   {
    "create": 1,
-   "delete": 1,
    "email": 1,
    "export": 1,
    "print": 1,
